@@ -287,14 +287,25 @@ namespace FolderMove
                 txbDestination.Text = dialog.SelectedPath + Path.GetFileName(txbSource.Text);
         }
 
-        private string SettingsPath => Path.Combine(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location), "settings.xml");
+        private string SettingsPath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "settings.xml");
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            Top = Math.Max(0, Cursor.Position.Y - Height / 2);
+            Left = Math.Max(0, Cursor.Position.X - Width / 2);
+
             if (File.Exists(SettingsPath))
             {
                 XmlDocument xml = new XmlDocument();
-                xml.Load(SettingsPath);
+
+                try
+                {
+                    xml.Load(SettingsPath);
+                }
+                catch
+                {
+                    return;
+                }
 
                 XmlNode node;
 
@@ -305,9 +316,6 @@ namespace FolderMove
                 if (node != null && node.InnerText.Length != 0 && txbSource.Text.Length != 0)
                     txbDestination.Text = Path.Combine(node.InnerText, Path.GetFileName(txbSource.Text));
             }
-
-            Top = Math.Max(0, Cursor.Position.Y - Height / 2);
-            Left = Math.Max(0, Cursor.Position.X - Width / 2);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -316,7 +324,10 @@ namespace FolderMove
             {
                 writer.WriteStartElement("settings");
                 writer.WriteElementString("source", txbSource.Text);
-                writer.WriteElementString("destination", Path.GetDirectoryName(txbDestination.Text));
+                if (string.IsNullOrEmpty(txbDestination.Text))
+                    writer.WriteElementString("destination", string.Empty);
+                else
+                    writer.WriteElementString("destination", Path.GetDirectoryName(txbDestination.Text));
                 writer.WriteEndElement();
             }
         }

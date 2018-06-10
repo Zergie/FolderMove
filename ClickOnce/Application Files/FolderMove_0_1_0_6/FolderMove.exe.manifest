@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="FolderMove.exe" version="0.1.0.6" publicKeyToken="34a72f087272ac78" language="en" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="FolderMove" version="1.0.0.0" publicKeyToken="6608D2828E3CD7E6" language="neutral" processorArchitecture="msil" />
+    <commandLine file="FolderMove.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC-Manifestoptionen
+          Wenn Sie die Ebene der Windows-Benutzerkontensteuerung ändern möchten, ersetzen Sie den 
+          Knoten "requestedExecutionLevel" durch eine der folgenden Angaben.
+
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel level="highestAvailable" uiAccess="false" />
+
+         Wenn Sie Datei- und Registrierungsvirtualisierung für Abwärtskompatibilität 
+         verwenden möchten, löschen Sie den Knoten "requestedExecutionLevel".
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FolderMove.exe" size="22488">
+      <assemblyIdentity name="FolderMove" version="1.0.0.0" publicKeyToken="6608D2828E3CD7E6" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>PJRJbk6USFYJ0B4wkSNJmInKNj+z0BuLZIvmO7KzfC0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=DESKTOP-LVJTB8U\user" issuerKeyHash="793aa2a5ab65786e6d619a93bf7d7f1d20b68c36" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>TOW6O3qaoGVWwojmDzqsDKE/WSMnfGWaIiIIApcde4g=</DigestValue></Reference></SignedInfo><SignatureValue>MyaAW71bmjexHCkVgl1Y946IG0tGfaXcVbceur9+hSMXYbz7cIs5YUPIkjSz+1UwC0PkQOkXKX0BVefgmpwMGN+a1H2eacdTGqsrD9SpZ60usE2/Q/hllfkc8zoBb0BCyBYlHMKYhVaUhEc3WhFmvtC81z12ocSoJxh+RRx0rkg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>p/stNbflMWOFbPqbKQhNhLQxveo6x3d2Ht+7Lv7b9EUl96+uNJrvt0krL2TTpqHSUGxm058J640QLsfe1bzX9Tl7HJjhUSIgQJuZXFemUmS8FT3leahOC9BkekmQQ+kMENTkGa8KgBOP3DtPqy02MWKCPwmVthub3AiTLGbV86U=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="887b1d97020822229a657c2723593fa10cac3a0fe688c25665a09a7a3bbae54c" Description="" Url=""><as:assemblyIdentity name="FolderMove.exe" version="0.1.0.6" publicKeyToken="34a72f087272ac78" language="en" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-LVJTB8U\user</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>hmj3K3OBB4vS7z/YzXliHV34Fg1zsLaajVcyCGPxJDo=</DigestValue></Reference></SignedInfo><SignatureValue>ZY9ABOb2oBiZK6EbTkwWR+Fp7SFZcNRHuRJgf0z61/IpmffxUd45V0Dukg+Shl5naBjRuc5gmwrefZZAFMXPB4qL6qSWAugf83AaHz1kWDjpZcWQcvOUGRuO3PAjeW8MF4t0Ltm/Tfjz+js/aHEWWaZo7zIzmwwL5A6XaIJbN9s=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>p/stNbflMWOFbPqbKQhNhLQxveo6x3d2Ht+7Lv7b9EUl96+uNJrvt0krL2TTpqHSUGxm058J640QLsfe1bzX9Tl7HJjhUSIgQJuZXFemUmS8FT3leahOC9BkekmQQ+kMENTkGa8KgBOP3DtPqy02MWKCPwmVthub3AiTLGbV86U=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQUnBXBUPXm5FDPeUTu0Ed6DANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtAEwAVgBKAFQAQgA4AFUAXAB1AHMAZQByMB4XDTE4MDYxMDE1MTk0NFoXDTE5MDYxMDIxMTk0NFowMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQBMAFYASgBUAEIAOABVAFwAdQBzAGUAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAp/stNbflMWOFbPqbKQhNhLQxveo6x3d2Ht+7Lv7b9EUl96+uNJrvt0krL2TTpqHSUGxm058J640QLsfe1bzX9Tl7HJjhUSIgQJuZXFemUmS8FT3leahOC9BkekmQQ+kMENTkGa8KgBOP3DtPqy02MWKCPwmVthub3AiTLGbV86UCAwEAATANBgkqhkiG9w0BAQsFAAOBgQCngg8FLBcWyELgd4GnLPjXemHiZzQYSXYFDKQqdZUhnlAY9zgILGzNX2CEk/QKRtXjXoq410f5WUVPHqFqineqo3hRZLfUY2npZgnOkZZ83sHFViN/u0+6bB6KYe8bhUD876A3r03fQV6Fcl9mD8kcCsYPW9FQh4F53sJwzIYDYQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
