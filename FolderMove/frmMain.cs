@@ -213,42 +213,46 @@ namespace FolderMove
 
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            FolderMoveResult result = (FolderMoveResult)e.Result;
+            if (e.Error == null)
+            {
+                FolderMoveResult result = (FolderMoveResult)e.Result;
 
-            if (result.HasFlag(enumFolderMoveResult.CleanDestination))
-            {
-                Directory.Delete(txbDestination.Text, true);
-                Directory.CreateDirectory(txbDestination.Text);
-            }
-            else if (result.HasFlag(enumFolderMoveResult.CleanDestination))
-            {
-                Directory.Delete(txbDestination.Text, true);
-            }
+                if (result.HasFlag(enumFolderMoveResult.CleanDestination))
+                {
+                    Directory.Delete(txbDestination.Text, true);
+                    Directory.CreateDirectory(txbDestination.Text);
+                }
+                else if (result.HasFlag(enumFolderMoveResult.CleanDestination))
+                {
+                    Directory.Delete(txbDestination.Text, true);
+                }
 
-            if (result.HasFlag(enumFolderMoveResult.DeleteLink))
-            {
-                File.Delete(txbSource.Text);
-            }
+                if (result.HasFlag(enumFolderMoveResult.DeleteLink))
+                {
+                    File.Delete(txbSource.Text);
+                }
 
-            if (result.HasFlag(enumFolderMoveResult.RevertMoveSource))
-            {
-                Directory.Move(Path.Combine(Path.GetTempPath(), Path.GetFileName(txbSource.Text) + ".old"), txbSource.Text);
+                if (result.HasFlag(enumFolderMoveResult.RevertMoveSource))
+                {
+                    Directory.Move(Path.Combine(Path.GetTempPath(), Path.GetFileName(txbSource.Text) + ".old"), txbSource.Text);
+                }
+
+
+                if (e.Cancelled)
+                {
+                    MessageBox.Show(this, $"Operation canceled by user.", "Canceled", MessageBoxButtons.OK);
+                }
+                else if (!result.IsFlag(enumFolderMoveResult.Success))
+                {
+                    MessageBox.Show(this, $"Folder\n\t{txbSource.Text}\ncould not be copyed.", "Failed", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show(this, $"Folder\n\t{txbSource.Text}\nis copyed to\n\t{txbDestination.Text}", "Success", MessageBoxButtons.OK);
+                }
             }
 
             progressWindow.Close();
-
-            if (e.Cancelled)
-            {
-                MessageBox.Show(this, $"Operation canceled by user.", "Canceled", MessageBoxButtons.OK);
-            }
-            else if (!result.IsFlag(enumFolderMoveResult.Success))
-            {
-                MessageBox.Show(this, $"Folder\n\t{txbSource.Text}\ncould not be copyed.", "Failed", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show(this, $"Folder\n\t{txbSource.Text}\nis copyed to\n\t{txbDestination.Text}", "Success", MessageBoxButtons.OK);
-            }
             Visible = true;
         }
 
