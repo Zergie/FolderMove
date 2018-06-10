@@ -294,6 +294,8 @@ namespace FolderMove
             Top = Math.Max(0, Cursor.Position.Y - Height / 2);
             Left = Math.Max(0, Cursor.Position.X - Width / 2);
 
+            Debugger.Launch();
+
             if (File.Exists(SettingsPath))
             {
                 XmlDocument xml = new XmlDocument();
