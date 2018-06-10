@@ -64,7 +64,7 @@ namespace FolderMove
             FolderMoveAction action = ((FolderMoveAction)e.Argument);
             FolderMoveResult result = new FolderMoveResult();
             e.Result = result;
-            throw new Exception("test");
+
             worker.ReportProgress(0, "calculation folder size");
             var folderCount = GetDirectoryCount(action.SourcePath);
             var fileSizes = GetDirectorySize(action.SourcePath);
