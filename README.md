@@ -13,3 +13,7 @@ After:
 ![Screenshot](Screenshots/after.png)
 
 **Be careful with system files/folders!** Some will work, some will break your system.
+
+# Installer
+
+[ClickOnce](https://raw.githubusercontent.com/Zergie/FolderMove/master/ClickOnce/setup.exe)
