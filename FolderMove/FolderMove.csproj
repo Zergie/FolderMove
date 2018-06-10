@@ -23,14 +23,14 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://raw.githubusercontent.com/Zergie/FolderMove/master/ClickOnce/</InstallUrl>
-    <UpdateUrl>https://raw.github.com/Zergie/FolderMove/ClickOnce/</UpdateUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/Zergie/FolderMove/master/ClickOnce/</UpdateUrl>
     <SupportUrl>https://github.com/Zergie/FolderMove/wiki</SupportUrl>
     <ErrorReportUrl>https://github.com/Zergie/FolderMove/issues</ErrorReportUrl>
     <TargetCulture>en</TargetCulture>
     <ProductName>FolderMove</ProductName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
