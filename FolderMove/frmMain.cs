@@ -64,7 +64,7 @@ namespace FolderMove
             FolderMoveAction action = ((FolderMoveAction)e.Argument);
             FolderMoveResult result = new FolderMoveResult();
             e.Result = result;
-
+            throw new Exception("test");
             worker.ReportProgress(0, "calculation folder size");
             var folderCount = GetDirectoryCount(action.SourcePath);
             var fileSizes = GetDirectorySize(action.SourcePath);
@@ -213,7 +213,14 @@ namespace FolderMove
 
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error == null)
+            progressWindow.Close();
+            Visible = true;
+
+            if (e.Error != null)
+            {
+                MessageBox.Show(this, $"An unexpected error occured: {e.Error}", "Error", MessageBoxButtons.OK);
+            }
+            else
             {
                 FolderMoveResult result = (FolderMoveResult)e.Result;
 
@@ -251,9 +258,6 @@ namespace FolderMove
                     MessageBox.Show(this, $"Folder\n\t{txbSource.Text}\nis copyed to\n\t{txbDestination.Text}", "Success", MessageBoxButtons.OK);
                 }
             }
-
-            progressWindow.Close();
-            Visible = true;
         }
 
         private void btnSourceBrowse_Click(object sender, EventArgs e)
