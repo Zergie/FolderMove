@@ -37,6 +37,7 @@
             this.txbSource = new System.Windows.Forms.TextBox();
             this.btnSourceBrowse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txbSource, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSourceBrowse, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblVersion, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -152,6 +154,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Destination folder:";
             // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblVersion.Location = new System.Drawing.Point(3, 78);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(114, 28);
+            this.lblVersion.TabIndex = 8;
+            this.lblVersion.Text = "version: ??";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +195,7 @@
         private System.Windows.Forms.TextBox txbSource;
         private System.Windows.Forms.Button btnSourceBrowse;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

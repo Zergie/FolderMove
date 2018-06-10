@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -294,7 +295,12 @@ namespace FolderMove
             Top = Math.Max(0, Cursor.Position.Y - Height / 2);
             Left = Math.Max(0, Cursor.Position.X - Width / 2);
 
-            Debugger.Launch();
+            if (ApplicationDeployment.IsNetworkDeployed)
+                lblVersion.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString();
+            else
+            {
+                lblVersion.Text = $"{Application.ProductVersion} (debug)";
+            }
 
             if (File.Exists(SettingsPath))
             {
